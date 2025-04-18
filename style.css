@@ -442,7 +442,7 @@ section p {
     align-items: center;
   }
 
-  .main-nav.active {
+  .main-nav.open {
     display: flex;
   }  
 }

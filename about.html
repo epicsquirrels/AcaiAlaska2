@@ -11,13 +11,19 @@
 <body>
 
   <!-- Sticky Header -->
-  <header>
-    <header class="header-large">
+  <header class="header-large">
+    <div class="nav-top-row">
+      <a href="https://www.doordash.com/store/acai-alaska-anchorage-25983091/" class="order-now">Order Now</a>
+  
       <div class="header-logo">
         <img src="images/Logo.jpg" alt="Acai Alaska Logo" />
         <h1>Acai Alaska</h1>
+      </div>
+  
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </div>
-    <nav class="main-nav">
+
+    <nav class="main-nav" id="mainNav">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
       <a href="menu.html">Menu</a>
@@ -58,20 +64,6 @@
     &copy; 2025 Acai Alaska. All rights reserved.
   </footer>
 
-  <!-- Accordion Script -->
-  <script>
-    const acc = document.querySelectorAll(".accordion");
-    acc.forEach(button => {
-      button.addEventListener("click", function () {
-        this.classList.toggle("active");
-        const panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

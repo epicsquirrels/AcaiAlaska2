@@ -1,6 +1,6 @@
 /* Global Styling */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(to bottom, #fff4f7, #ffffff);
@@ -17,6 +17,13 @@ body {
 
 h1, h2, h3 {
   margin-top: 0;
+}
+
+.desktop-only {
+  display: none;
+}
+.mobile-only {
+  display: inline-block;
 }
 
 /* Sticky Header */
@@ -85,14 +92,14 @@ h1, h2, h3 {
 .nav-top-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
+  justify-content: space-around;
+  padding: 0.5rem 0rem;
 }
 
 .order-now {
   background-color: #fbbf24;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0 0.6rem;
   border-radius: 999px;
   font-weight: bold;
   text-decoration: none;
@@ -103,7 +110,7 @@ h1, h2, h3 {
 .order-now:hover {
   background-color: white;
   color: #fbbf24;
-  border: 2px solid #fbbf24;
+  border: 1px solid #fbbf24;
 }
 
 /* Container */
@@ -199,27 +206,32 @@ section p {
 /* Scrollable Menu Sections */
 .scroll-wrapper {
   display: flex;
-  justify-content: center;
-  padding: 0 1.5rem;
+  align-items: center;
   overflow: hidden;
+  position: relative;
+  padding: 0 2.5rem;
 }
 
-.scroll-wrapper.with-arrows {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 1.5rem;
+.scroll-wrapper.with-arrows .scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2;
+  color: #6b21a8;
+  border-radius: 50%;
+  padding: 0.3rem 0.6rem;
 }
 
 .scroll-section {
   display: flex;
   overflow-x: auto;
-  gap: 1rem;
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  gap: 1rem;
+  padding: 1rem 0;
 }
 
 .scroll-section::-webkit-scrollbar {
@@ -236,21 +248,21 @@ section p {
   cursor: pointer;
   z-index: 2;
   color: #6b21a8;
-  padding: 0 0.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   border-radius: 50%;
+  padding: 0.3rem 0.6rem;
 }
 
 .scroll-arrow.left {
-  left: 0;
+  left: 0.25rem;
 }
 
 .scroll-arrow.right {
-  right: 0;
+  right: 0.25rem;
 }
 
 /* Menu Cards */
 .menu-card {
+  scroll-snap-align: start;
   flex: 0 0 auto;
   width: 220px;
   scroll-snap-align: start;
@@ -301,13 +313,19 @@ section p {
 }
 
 .panel {
-  padding: 0 1rem;
-  display: none;
-  background-color: white;
+  max-height: 0;
   overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 0 1rem;
+  background-color: white;
   border-left: 4px solid #6b21a8;
   border-radius: 0 0 8px 8px;
   margin-bottom: 1rem;
+}
+
+.panel.open {
+  max-height: 500px;
+  padding: 1rem;
 }
 
 /* Menu List */
@@ -328,13 +346,16 @@ section p {
   border-bottom: none;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 /* Category Title */
 .menu-category {
   color: #6b21a8;
   font-size: 1.8rem;
-  margin: 3rem 0 2rem;
+  margin: 1rem 0 2rem;
   text-align: center;
-  padding: 0 1.5rem;
 }
 
 .two-column-sections {
@@ -401,6 +422,11 @@ section p {
   .hero h2 {
     font-size: 2rem;
   }
+
+  .container {
+    backdrop-filter: none;
+    box-shadow: none;
+  }
 }
 
 /*mobile optimization*/
@@ -414,6 +440,9 @@ section p {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
   .nav-top-row {
     display: flex;
     align-items: center;
@@ -423,28 +452,27 @@ section p {
 
   .order-now {
     font-size: 0.85rem;
-    padding: 0.4rem 1rem;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 1.75rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
+    padding: 2;
   }
 
   .main-nav {
     display: none;
     flex-direction: column;
-    margin-top: 1rem;
-    align-items: center;
+    text-align: center;
   }
 
   .main-nav.open {
     display: flex;
-  }  
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+  }
 }
 
 /*Desktop*/
@@ -462,4 +490,10 @@ section p {
   .header-logo {
     flex-grow: unset;
   }
+  .desktop-only {
+    display: inline-block;
+  }
+  .mobile-only {
+    display: none;
+}
 }

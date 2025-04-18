@@ -13,7 +13,7 @@
 <header>
   <header class="header-large">
     <div class="nav-top-row">
-      <a href="https://www.doordash.com/store/acai-alaska-anchorage-25983091/" class="order-now">Order Now</a>
+      <a href="https://www.doordash.com/store/acai-alaska-anchorage-25983091/" class="order-now mobile-only">Order Now</a>
   
       <div class="header-logo">
         <img src="images/Logo.jpg" alt="Acai Alaska Logo" />
@@ -27,6 +27,7 @@
     <a href="about.html">About</a>
     <a href="menu.html" class="active">Menu</a> 
     <a href="contact.html">Contact</a>
+    <a href="https://www.doordash.com/store/acai-alaska-anchorage-25983091/" class="order-now desktop-only">Order Now</a>
   </nav>
 </header>
 
@@ -36,7 +37,7 @@
   <h3 class="menu-category">Signature Bowls</h3>
   <div class="scroll-wrapper with-arrows">
 
-    <button class="scroll-arrow left" onclick="scrollLeft(this)">❮</button>
+    <button class="scroll-arrow left" onclick="scrollSectionLeft(this)">❮</button>
 
     <div class="scroll-section">
     <div class="menu-card">
@@ -105,13 +106,14 @@
     </div>
     </div>
     
-    <button class="scroll-arrow right" onclick="scrollRight(this)">❯</button>
+    <button class="scroll-arrow right" onclick="scrollSectionRight(this)">❯</button>
   </div>
 
   <!-- Smoothies -->
   <h3 class="menu-category">Signature Smoothies</h3>
-  <div class="scroll-wrapper">
-  <div class="scroll-section">
+  <div class="scroll-wrapper with-arrows">
+    <button class="scroll-arrow left" onclick="scrollSectionLeft(this)">❮</button>
+    <div class="scroll-section">
     <div class="menu-card">
       <img src="images/fill.jpg" alt="Berry Blast" />
       <h4>Arctic PB&J</h4>
@@ -132,42 +134,43 @@
       <h4>Sleeping Lady</h4>
       <p>Original blend topped with mango and coconut shavings</p>
     </div>
-  </div>
+    </div>
+    <button class="scroll-arrow right" onclick="scrollSectionRight(this)">❯</button>
   </div>
 
-  <!-- Fresh Eats -->
-  <div class="two-column-sections">
+<!-- Fresh Eats -->
+<div class="menu-subsection">
+  <h3 class="menu-category">Fresh Eats & Drinks</h3>
+  <div class="scroll-wrapper with-arrows">
+    <button class="scroll-arrow left" onclick="scrollSectionLeft(this)">❮</button>
 
-    <!-- Fresh Eats -->
-    <div class="menu-subsection">
-      <h3 class="menu-category">Fresh Eats & Drinks</h3>
-      <div class="scroll-wrapper">
-        <div class="scroll-section">
-          <div class="menu-card">
-            <img src="images/grilledcheese.jpg" alt="Avocado Toast" />
-            <h4>Grilled Cheese</h4>
-            <p>On hearty organic bread</p>
-          </div>
-          <div class="menu-card">
-            <img src="images/grilledcheese.jpg" alt="Grilled Cheese" />
-            <h4>Grilled Ham & Cheese</h4>
-            <p>On hearty organic bread with ham</p>
-          </div>
-          <div class="menu-card">
-            <img src="images/fill.jpg" alt="Italian Soda" />
-            <h4>Italian Soda</h4>
-            <p>Choice of flavor with cream</p>
-          </div>
-          <div class="menu-card">
-            <img src="images/fill.jpg" alt="Hot Coffee" />
-            <h4>Hot Coffee</h4>
-            <p>Locally roasted, served fresh</p>
-        </div>
+    <div class="scroll-section">
+      <div class="menu-card">
+        <img src="images/grilledcheese.jpg" alt="Avocado Toast" />
+        <h4>Grilled Cheese</h4>
+        <p>On hearty organic bread</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/grilledcheese.jpg" alt="Grilled Cheese" />
+        <h4>Grilled Ham & Cheese</h4>
+        <p>On hearty organic bread with ham</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/fill.jpg" alt="Italian Soda" />
+        <h4>Italian Soda</h4>
+        <p>Choice of flavor with cream</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/fill.jpg" alt="Hot Coffee" />
+        <h4>Hot Coffee</h4>
+        <p>Locally roasted, served fresh</p>
       </div>
     </div>
-    </div>
+
+    <button class="scroll-arrow right" onclick="scrollSectionRight(this)">❯</button>
   </div>
-  </div>
+</div>
+</div>
 
 <footer>
   &copy; 2025 Acai Alaska. All rights reserved.
